@@ -7,16 +7,9 @@ _A share registrar solution for the 21st century._
 ## Getting started
 
 ```bash
-# Clone this project
 $ git clone https://github.com/quelixir/depositaire
-
-# Access
 $ cd depositaire
-
-# Install dependencies
 $ poetry install
-
-# Run the project
 $ poetry run python -m flask run
 ```
 
