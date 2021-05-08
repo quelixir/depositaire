@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "depositaire"
 version = "0.1.0"
-description = "A share registrar solution for the 21st century"
+description = "A share registrar solution for the 21st century."
 authors = ["Nick Schlobohm <nickschlobohm@protonmail.ch>"]
 
 [tool.poetry.dependencies]
