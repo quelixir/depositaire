@@ -2,9 +2,10 @@ from app import app
 from flask import jsonify
 
 import config
+from . import api_v1
 
 
-@app.route('/entity')
+@app.route(api_v1.BASE_URL + '/entity')
 def entity():
     ent_name = {'ent_name_full': config.cfg['ent_name']['ent_name_full'],
                 'ent_name_short': config.cfg['ent_name']['ent_name_short'],
