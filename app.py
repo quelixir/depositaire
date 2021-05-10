@@ -10,11 +10,13 @@ app.debug = config.cfg['meta'].getboolean('depositaire_debug')
 # API
 import routes.api.v1
 
-
 # default route
+from flask import jsonify
+
+
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return jsonify(hello='world', app='depositaire', version=config.VERSION)
 
 
 if __name__ == '__main__':
