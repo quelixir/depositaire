@@ -1,8 +1,6 @@
 # Depositaire
 
-[![Made with Python](https://img.shields.io/badge/made%20with-Python-red?style=flat-square)](https://www.python.org/)
-
-[![MIT License](https://img.shields.io/github/license/quelixir/depositaire?style=flat-square)](https://github.com/quelixir/depositaire/blob/main/LICENSE)
+[![Made with Python](https://img.shields.io/badge/made%20with-Python-red?style=flat-square)](https://www.python.org/) [![MIT License](https://img.shields.io/github/license/quelixir/depositaire?style=flat-square)](https://github.com/quelixir/depositaire/blob/main/LICENSE)
 
 _A share registrar solution for the 21st century._
 
