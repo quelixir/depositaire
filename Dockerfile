@@ -1,6 +1,6 @@
 FROM python:alpine3.13
 
-ENV POETRY_VERSION=1.1.6
+ENV POETRY_VERSION="1.1.6"
 
 WORKDIR /usr/src/app
 
