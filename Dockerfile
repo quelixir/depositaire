@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN apk add --no-cache --update gcc g++ make python3-dev
+RUN apk add --no-cache --update cargo gcc g++ libffi-dev make openssl-dev python3-dev rust
 
 RUN pip install --ignore-installed "poetry==${POETRY_VERSION}"
 
