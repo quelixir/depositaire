@@ -8,7 +8,7 @@ COPY . .
 
 RUN apk add --no-cache --update gcc g++ make python3-dev
 
-RUN pip install --ignore-installed 'poetry==$POETRY_VERSION'
+RUN pip install --ignore-installed 'poetry==${POETRY_VERSION}'
 
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
