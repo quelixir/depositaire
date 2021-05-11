@@ -2,6 +2,8 @@ FROM alpine:3.13.5
 
 ENV POETRY_VERSION="1.1.6"
 
+EXPOSE 5000/tcp
+
 WORKDIR /usr/src/app
 
 COPY . .
@@ -14,4 +16,4 @@ RUN pip install --ignore-installed "poetry==${POETRY_VERSION}"
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
-CMD [ "poetry", "run", "flask run" ]
+CMD ["poetry", "run", "flask", "run", "--host", "0.0.0.0"]
