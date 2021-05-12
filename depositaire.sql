@@ -92,6 +92,24 @@ INSERT INTO `holder_types` (`id`, `description`, `created`, `creator`, `last_edi
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `id` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `datetime` datetime NOT NULL,
+  `code` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
+  `increase_holder` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `increase_amount` bigint(20) DEFAULT NULL,
+  `increase_class` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `decrease_holder` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `decrease_amount` bigint(20) DEFAULT NULL,
+  `decrease_class` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transaction_codes`
 --
 
@@ -179,6 +197,12 @@ ALTER TABLE `holder_statuses`
 -- Indexes for table `holder_types`
 --
 ALTER TABLE `holder_types`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `transactions`
+--
+ALTER TABLE `transactions`
   ADD UNIQUE KEY `id` (`id`);
 
 --
