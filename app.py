@@ -16,7 +16,7 @@ from flask import jsonify
 
 @app.route('/')
 def hello_world():
-    return jsonify(hello="world", app="depositaire", version=config.get('VERSION'))
+    return jsonify(hello="world", app="depositaire", debug=config.get('DEBUG'), version=config.get('VERSION'))
 
 
 if __name__ == '__main__':
