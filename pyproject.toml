@@ -8,6 +8,7 @@ authors = ["Nick Schlobohm <nickschlobohm@protonmail.ch>"]
 python = "^3.8"
 Flask = "^1.1.2"
 toml = "^0.10.2"
+python-dotenv = "^0.17.1"
 
 [tool.poetry.dev-dependencies]
 
