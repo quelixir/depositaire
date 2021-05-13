@@ -12,7 +12,12 @@ load_dotenv()
 
 
 def get(key):
-    return str(os.getenv('DEPOSITAIRE_' + str(key).upper()))
+    key = str(key).upper()
+    if ('DEPOSITAIRE' in key[:11]):
+        print()
+        return str(os.getenv(key))
+    else:
+        return str(os.getenv('DEPOSITAIRE_' + key))
 
 
 def getboolean(key):
