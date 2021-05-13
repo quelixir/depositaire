@@ -28,7 +28,7 @@ CREATE TABLE holders (id VARCHAR (36) PRIMARY KEY NOT NULL UNIQUE, type VARCHAR 
 
 -- Table: securities
 DROP TABLE IF EXISTS securities;
-CREATE TABLE securities (id VARCHAR (36) PRIMARY KEY UNIQUE NOT NULL, name_short VARCHAR (10) NOT NULL, name_full VARCHAR (80));
+CREATE TABLE securities (id VARCHAR (36) PRIMARY KEY UNIQUE NOT NULL, name_short VARCHAR (10) NOT NULL, name_full VARCHAR (80), noun VARCHAR (35) NOT NULL, noun_plural VARCHAR (35) NOT NULL);
 
 -- Table: transaction_codes
 DROP TABLE IF EXISTS transaction_codes;
