@@ -7,7 +7,7 @@ from . import api_v1
 
 @app.route(api_v1.BASE_URL + '/entity')
 def entity():
-    ent_name = {'ent_name_full': config.get('ENT_NAME_FULL'),
-                'ent_name_short': config.get('ENT_NAME_SHORT'),
-                'ent_name_legal': config.get('ENT_NAME_LEGAL')}
-    return jsonify(ent_name=ent_name)
+    entity_name = {'entity_name_full': config.get('ENTITY_NAME_FULL'),
+                   'entity_name_short': config.get('ENTITY_NAME_SHORT'),
+                   'entity_name_legal': config.get('ENTITY_NAME_LEGAL')}
+    return jsonify(entity_name=entity_name)
