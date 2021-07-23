@@ -15,6 +15,6 @@ $ poetry run python -m flask run
 
 ## License
 
-This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
+This project is licensed under the GNU General Public License v3.0. For more details, see the [LICENSE](LICENSE) file.
 
 Made with :heart: by <a href="https://github.com/quelixir" target="_blank">Nick Schlobohm</a>
