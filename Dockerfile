@@ -1,4 +1,4 @@
-FROM alpine:3.13.5
+FROM alpine:3.14
 
 ENV POETRY_VERSION="1.1.6"
 
