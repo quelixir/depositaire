@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM python:3.9.6-buster
 
 ENV POETRY_VERSION="1.1.6"
 
