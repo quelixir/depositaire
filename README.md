@@ -6,6 +6,8 @@ _A share registrar solution for the 21st century._
 
 ## Getting started
 
+### Bare metal
+
 ```bash
 $ git clone https://github.com/quelixir/depositaire
 $ cd depositaire
@@ -13,6 +15,23 @@ $ poetry install
 $ poetry run python -m flask run
 ```
 
+### Docker
+
+```bash
+$ docker run --detach \
+  --env DEPOSITAIRE_DB_HOST="<mariadb_server_ip>" \
+  --env DEPOSITAIRE_DB_PORT="3306" \
+  --env DEPOSITAIRE_DB_USER="root" \
+  --env DEPOSITAIRE_DB_PASS="" \
+  --env DEPOSITAIRE_DB_NAME="depositaire" \
+  --name depositaire \
+  --publish 80:5000 \
+  --restart=unless-stopped \
+  quelixir/depositaire:latest
+
+# Alternatively, use ghcr.io:
+  ghcr.io/quelixir/depositaire:latest
+```
 
 ## License
 
