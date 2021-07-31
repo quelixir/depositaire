@@ -1,14 +1,25 @@
 name: "Python linter"
 
-on: pull_request
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   wemake:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: wemake-services/wemake-python-styleguide
+      - if: github.event_name == 'pull_request'
+        uses: wemake-services/wemake-python-styleguide
         with:
           reporter: "github-pr-review"
+          env:
+            GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - if: github.event_name == 'push'
+        uses: wemake-services/wemake-python-styleguide
+        with:
+          reporter: "github-pr-check"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
