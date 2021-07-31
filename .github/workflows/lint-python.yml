@@ -1,13 +1,13 @@
-name: "Run Python linter"
+name: "Python linter"
 
-on: push
+on: pull_request
 
 jobs:
   wemake:
     runs-on: ubuntu-latest
     steps:
-      - name: wemake-python-styleguide
-        uses: wemake-services/wemake-python-styleguide
+      - uses: actions/checkout@v2
+      - uses: wemake-services/wemake-python-styleguide
         with:
           reporter: "github-pr-review"
         env:
