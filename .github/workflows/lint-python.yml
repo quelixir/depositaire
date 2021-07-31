@@ -15,8 +15,8 @@ jobs:
         uses: wemake-services/wemake-python-styleguide
         with:
           reporter: "github-pr-review"
-          env:
-            GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       - if: github.event_name == 'push'
         uses: wemake-services/wemake-python-styleguide
         with:
