@@ -8,29 +8,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  lint-and-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ 3.6, 3.7, 3.8 ]
+        poetry-version: [ 1.0, 1.1.6 ]
+        os: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: ${{ matrix.python-version }}
 
-      - name: Install poetry
-        run: |
-          pip install -U pip
-
-          curl -sSL \
-            "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py" | python -
-
-          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
-
-      - name: Set up cache
-        uses: actions/cache@v2
+      - name: Run image
+        uses: abatilo/actions-poetry@v2.0.0
         with:
-          path: .venv
-          key: venv-3.9-${{ hashFiles('poetry.lock') }}
+          poetry-version: ${{ matrix.poetry-version }}
+
       - name: Install dependencies
         run: |
           poetry config virtualenvs.in-project true
