@@ -4,6 +4,10 @@ SHELL:=/usr/bin/env bash
 lint:
 	poetry run flake8 .
 
+.PHONY: unit
+unit:
+	poetry run pytest --junitxml=coverage.xml
+
 .PHONY: package
 package:
 	poetry run poetry check
