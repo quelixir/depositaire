@@ -1,6 +1,6 @@
 @api:
-- routes/api/*
-- routes/api/**/*
+  - routes/api/*
+  - routes/api/**/*
 
 @api/v1:
-- routes/api/v1/*
+  - routes/api/v1/*
