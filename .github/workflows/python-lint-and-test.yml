@@ -35,7 +35,7 @@ jobs:
           poetry run pip install -U pip
           poetry install
 
-      - name: Lint code
+      - name: Lint and test code
         run: |
           make test
 
