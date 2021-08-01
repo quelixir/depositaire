@@ -2,7 +2,14 @@
 name = "depositaire"
 version = "0.1.0"
 description = "A share registrar solution for the 21st century."
+
+license = "GPL-3.0"
+
 authors = ["Nick Schlobohm <nickschlobohm@protonmail.ch>"]
+
+readme = "README.md"
+
+repository = "https://github.com/quelixir/depositaire"
 
 [tool.poetry.dependencies]
 python = "^3.8"
