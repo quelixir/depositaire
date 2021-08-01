@@ -1,3 +1,7 @@
+"""API v1."""
+
+# flake8: noqa
+
 from os.path import dirname, basename, isfile, join
 from glob import glob
 
