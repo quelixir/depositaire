@@ -48,7 +48,7 @@ jobs:
         run: grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
 
       - name: Run tests with Poetry
-        run: poetry run pytest --junitxml=coverage.xml
+        run: poetry run pytest --cov-report term --cov-report xml:coverage.xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
