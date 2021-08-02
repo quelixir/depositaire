@@ -33,6 +33,12 @@ $ docker run --detach \
   ghcr.io/quelixir/depositaire:latest
 ```
 
+## Creating a SQLite database file
+
+```bash
+grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
+```
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0. For more details, see the [LICENSE](LICENSE) file.
