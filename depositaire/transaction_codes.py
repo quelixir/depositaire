@@ -5,7 +5,7 @@ from flask import Blueprint, jsonify
 from depositaire import database, util
 
 conn = database.get()
-cursor = conn.cursor(buffered=True)
+cursor = conn.cursor()
 
 bp = Blueprint('api-transaction_codes',
                __name__, url_prefix='/api/transaction_codes')
