@@ -44,6 +44,9 @@ jobs:
           poetry run pip check
           poetry run safety check --full-report
 
+      - name: Create SQLite db from .sql file
+        run: grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
+
       - name: Run tests with Poetry
         run: poetry run pytest --junitxml=coverage.xml
 
