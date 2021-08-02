@@ -31,6 +31,7 @@ def create_app():
                        version=config.get('VERSION'))
 
     @app.route('/api')
+    @app.route('/api/')
     @app.route('/api/index')
     def api():
         """Return /api endpoint."""
