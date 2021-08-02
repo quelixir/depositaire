@@ -39,6 +39,7 @@ jobs:
         run: poetry run flake8 .
 
       - name: Check dependency safety
+        continue-on-error: true
         run: |
           poetry run poetry check
           poetry run pip check
