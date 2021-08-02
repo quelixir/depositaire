@@ -39,12 +39,20 @@ jobs:
         continue-on-error: true
         run: poetry run flake8 .
 
+      - name: Warn if linting fails
+        if: ${{ failure() }}
+        run: echo "::warning ::Linting failed! Read logs for more detail."
+
       - name: Check dependency safety
         continue-on-error: true
         run: |
           poetry run poetry check
           poetry run pip check
           poetry run safety check --full-report
+
+      - name: Warn if depency safety checks fail
+        if: ${{ failure() }}
+        run: echo "::warning ::Dependency safety checks failed! Read logs for more detail."
 
       - name: Create SQLite db from .sql file
         run: grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
