@@ -1,5 +1,6 @@
 """Tests for /api/transaction_codes endpoint."""
 
+
 def test_transaction_codes_endpoint_empty(client):
     """Ensure /api/transaction_codes endpoint is not empty."""
     for url in ('/api/transaction_codes', '/api/transaction_codes/'):
