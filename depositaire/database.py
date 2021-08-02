@@ -2,7 +2,7 @@
 
 import mysql.connector as db
 
-import config
+from depositaire import config
 
 conn = db.connect(
     user=config.get('DB_USER'),

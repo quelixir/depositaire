@@ -3,7 +3,7 @@
 import datetime
 import json
 
-import database
+from depositaire import database
 
 
 def jsondump(execution, cursor=database.get().cursor()):
