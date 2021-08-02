@@ -1,6 +1,6 @@
 <img src="static/logo.png" alt="Depositaire Logo" width="200" />
 
-[![Made with Python](https://img.shields.io/badge/made%20with-Python-red?style=flat-square)](https://www.python.org/) [![GPL-3.0](https://img.shields.io/github/license/quelixir/depositaire?style=flat-square)](https://github.com/quelixir/depositaire/blob/main/LICENSE)
+[![Made with Python](https://img.shields.io/badge/made%20with-Python-red?style=flat-square)](https://www.python.org/) [![GPL-3.0](https://img.shields.io/github/license/quelixir/depositaire?style=flat-square)](https://github.com/quelixir/depositaire/blob/main/LICENSE) [![codecov](https://img.shields.io/codecov/c/gh/quelixir/depositaire?style=flat-square)](https://codecov.io/gh/quelixir/depositaire)
 
 _A share registrar solution for the 21st century._
 
