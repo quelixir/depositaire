@@ -24,8 +24,9 @@ def transactions():
 def transactions_by_id(id=None):
     """Return /transactions/<id> endpoint."""
     if (len(id) == 36):
-        cursor.execute('SELECT * FROM `transactions` WHERE `id` = %s;',
-                       (id,))
+        cursor.execute(
+            'SELECT * FROM `transactions` WHERE `id` = "{0}";'.format(id),
+        )
         execution = cursor.fetchall()
         return util.jsondump(execution, cursor), 200, \
             {'Content-Type': 'application/json'}
