@@ -11,7 +11,7 @@ INSERT INTO holder_statuses (id, description, created, creator) VALUES ('e4b2f11
 -- Table: holder_types
 DROP TABLE IF EXISTS holder_types;
 CREATE TABLE holder_types (id VARCHAR (36) PRIMARY KEY NOT NULL, description VARCHAR (80) NOT NULL, created DATETIME NOT NULL, creator VARCHAR (36) NOT NULL, last_edited DATETIME, last_editor VARCHAR (36));
-INSERT INTO holder_types (id, description, created, creator) VALUES ('596c03cc-02d6-4d84-be18-1abe7c2945d', 'trust', '0000-00-00', '5ebc22d3-6fde-496c-b499-d8e40d575b14');
+INSERT INTO holder_types (id, description, created, creator) VALUES ('959bc08a-db64-482e-b431-559731059b32', 'trust', '0000-00-00', '5ebc22d3-6fde-496c-b499-d8e40d575b14');
 INSERT INTO holder_types (id, description, created, creator) VALUES ('296fca26-f386-4954-8abc-a2515c3b2656', 'deceased_individual', '0000-00-00', '5ebc22d3-6fde-496c-b499-d8e40d575b14');
 INSERT INTO holder_types (id, description, created, creator) VALUES ('2c564ebf-ed08-4362-91fd-98b15213e20f', 'unknown', '0000-00-00', '5ebc22d3-6fde-496c-b499-d8e40d575b14');
 INSERT INTO holder_types (id, description, created, creator) VALUES ('4d00c0a0-4f95-4e6a-bd0d-2b4c3cacaba8', 'individual', '0000-00-00', '5ebc22d3-6fde-496c-b499-d8e40d575b14');
