@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
+RUN apt-get update && apt-get install -y sqlite3 && grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
 
 RUN pip install --ignore-installed "poetry==${POETRY_VERSION}"
 
