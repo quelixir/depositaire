@@ -21,11 +21,11 @@ def transaction_codes():
 
 
 @bp.route('/<id>')
-def transaction_codes_by_id(search_id=None):
+def transaction_codes_by_id(id=None):
     """Return /transaction_codes/<id> endpoint."""
-    if (len(search_id) == 36):
+    if (len(id) == 36):
         cursor.execute('SELECT * FROM `transaction_codes` WHERE `id` = %s;',
-                       (search_id,))
+                       (id,))
         execution = cursor.fetchall()
         return util.jsondump(execution, cursor), 200, \
             {'Content-Type': 'application/json'}
