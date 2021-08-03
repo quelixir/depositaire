@@ -1,7 +1,7 @@
 """Tests for /api endpoint."""
 
 
-def test_api_endpoint_empty(client):
+def test_api_endpoint_not_empty(client):
     """Ensure /api endpoint is not empty."""
     for url in ('/api', '/api/', '/api/index'):
         res = client.get(url, follow_redirects=True)
