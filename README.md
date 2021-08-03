@@ -17,8 +17,26 @@ $ poetry run python -m flask run
 
 ### Docker
 
+#### SQLite
+
 ```bash
 $ docker run --detach \
+  --env DEPOSITAIRE_DB_TYPE="SQLITE" \
+  --env DEPOSITAIRE_DB_TYPE="depositaire.sqlite" \
+  --name depositaire \
+  --publish 80:5000 \
+  --restart=unless-stopped \
+  quelixir/depositaire:latest
+
+# Alternatively, use ghcr.io:
+  ghcr.io/quelixir/depositaire:latest
+```
+
+#### MariaDB
+
+```bash
+$ docker run --detach \
+  --env DEPOSITAIRE_DB_TYPE="MARIADB" \
   --env DEPOSITAIRE_DB_HOST="<mariadb_server_ip>" \
   --env DEPOSITAIRE_DB_PORT="3306" \
   --env DEPOSITAIRE_DB_USER="root" \
