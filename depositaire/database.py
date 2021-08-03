@@ -15,12 +15,8 @@ if config.get('DB_TYPE').upper() == 'MARIADB':
         database=config.get('DB_NAME'),
     )
 else:
-    if config.get('DB_FILE') is not None:
-        filename = config.get('DB_FILE')
-    else:
-        filename = 'depositaire.sqlite'
-
-    conn = sqlite3.connect(filename, check_same_thread=False)
+    conn = sqlite3.connect(config.get('DB_FILE') or 'depositaire.sqlite',
+                           check_same_thread=False)
 
 
 def get():
