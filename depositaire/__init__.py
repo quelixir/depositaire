@@ -4,7 +4,8 @@ import os
 
 from flask import Flask, jsonify
 
-from depositaire import config, entity, transaction_codes, transactions
+from depositaire import (config, entity, holder_statuses, holder_types,
+                         holders, transaction_codes, transactions)
 
 
 def create_app():
@@ -19,6 +20,9 @@ def create_app():
         pass
 
     app.register_blueprint(entity.bp)
+    app.register_blueprint(holders.bp)
+    app.register_blueprint(holder_statuses.bp)
+    app.register_blueprint(holder_types.bp)
     app.register_blueprint(transactions.bp)
     app.register_blueprint(transaction_codes.bp)
 
