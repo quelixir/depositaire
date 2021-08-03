@@ -24,7 +24,6 @@ def get(key):
     """
     key = str(key).upper()
     if ('DEPOSITAIRE' in key[:11]):
-        print()
         return str(os.getenv(key))
     else:
         return str(os.getenv('DEPOSITAIRE_' + key))
