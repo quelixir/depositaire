@@ -21,7 +21,7 @@ def transactions():
 
 
 @bp.route('/<id>')
-def transactions_by_id(id=None):
+def transaction_by_id(id=None):
     """Return /transactions/<id> endpoint."""
     if (len(id) == 36):
         cursor.execute(
