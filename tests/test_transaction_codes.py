@@ -15,3 +15,12 @@ def test_transaction_codes_endpoint_contains_reason(client):
         res = client.get(url, follow_redirects=True)
         data = res.get_data(as_text=True)
         assert 'reason' in data
+
+
+def test_transaction_codes_endpoint_individualrecord(client):
+    """Ensure /api/transaction_codes/<id> endpoint works."""
+    res = client.get(
+        '/api/transaction_codes/032dec5e-aa3a-4691-8467-93c7b439bbf8',
+        follow_redirects=True)
+    data = res.get_data(as_text=True)
+    assert 'conversion_miscellaneous' in data
