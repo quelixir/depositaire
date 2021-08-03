@@ -34,6 +34,7 @@ jobs:
 
       - name: Install project dependencies
         run: poetry install
+        timeout-minutes: 5
 
       - name: Lint code
         run: poetry run flake8 . || echo "::warning ::Linting failed! Read logs for more detail."
