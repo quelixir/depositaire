@@ -1,6 +1,6 @@
 """Transactions endpoint."""
 
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 
 from depositaire import database, util
 
@@ -11,12 +11,19 @@ bp = Blueprint('api-transactions',
                __name__, url_prefix='/api/transactions')
 
 
-@bp.route('/')
+@bp.route('', methods=['GET'])
 def transactions():
-    """Return /transactions endpoint."""
+    """Return /transactions GET endpoint."""
     cursor.execute('SELECT * FROM `transactions`;')
     execution = cursor.fetchall()
     return util.jsondump(execution, cursor), 200,\
+        {'Content-Type': 'application/json'}
+
+
+@bp.route('', methods=['POST', 'PUT'])
+def transactions_create():
+    """Return /transactions POST/PUT endpoints."""
+    return jsonify(postOrPut=request.method), 200,\
         {'Content-Type': 'application/json'}
 
 
