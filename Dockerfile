@@ -1,6 +1,6 @@
-FROM python:3.9.6-buster
+FROM alpine:latest
 
-ENV POETRY_VERSION="1.1.6"
+ENV POETRY_VERSION="1.8.0"
 
 ENV DEPOSITAIRE_DB_TYPE="SQLITE"
 ENV DEPOSITAIRE_DB_FILE="depositaire.sqlite"
@@ -11,9 +11,16 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN apt-get update && apt-get install -y sqlite3 && grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
+RUN apk add --no-cache --update \
+        bash \
+        python3 \
+        py3-pip \
+        sqlite \
+    && rm -rf ~/.cache/* /usr/local/share/man /tmp/*  
 
-RUN pip install --ignore-installed "poetry==${POETRY_VERSION}"
+RUN grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.sqlite
+
+RUN pipx install --ignore-installed "poetry==${POETRY_VERSION}"
 
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
