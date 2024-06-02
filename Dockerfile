@@ -13,6 +13,7 @@ COPY . .
 
 RUN apk add --no-cache --update \
         bash \
+        build-base \
         python3 \
         pipx \
         sqlite \
