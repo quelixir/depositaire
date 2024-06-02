@@ -22,7 +22,7 @@ RUN grep -Ev "START TRANSACTION;|COMMIT;" depositaire.sql | sqlite3 depositaire.
 
 RUN pipx install "poetry==${POETRY_VERSION}"
 
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi
+RUN ~/.local/bin/poetry config virtualenvs.create false --local \
+    && ~/.local/bin/poetry install --no-interaction --no-ansi
 
 CMD ["poetry", "run", "flask", "run", "--host", "0.0.0.0"]
