@@ -11,12 +11,13 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-# build-base and libffi-dev needed for installing cffi (sub-dependency)
+# build-base, libffi-dev, and python3-dev needed for installing cffi (sub-dependency)
 RUN apk add --no-cache --update \
         bash \
         build-base \
         libffi-dev \
         python3 \
+        python3-dev \
         pipx \
         sqlite \
     && rm -rf ~/.cache/* /usr/local/share/man /tmp/*  
