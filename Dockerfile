@@ -13,7 +13,8 @@ COPY . .
 
 RUN apk add --no-cache --update \
         bash \
-        build-base \
+        build-base \ # needed for installing cffi (sub-dependency)
+        libffi-dev \ # needed for installing cffi (sub-dependency)
         python3 \
         pipx \
         sqlite \
